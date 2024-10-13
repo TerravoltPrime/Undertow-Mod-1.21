@@ -1,3 +1,7 @@
 {
-  "parent": "undertow:block/umber"
+  "variants": {
+    "":{
+      "model": "undertow:block/umber"
+    }
+  }
 }
