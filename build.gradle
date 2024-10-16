@@ -1,8 +1,7 @@
 plugins {
-    id "net.neoforged.gradle.userdev" version "7.+"
-    id "net.neoforged.gradle.mixin" version "7.+"
-    id "com.matthewprenger.cursegradle" version "1.4.0"
-    id "com.modrinth.minotaur" version "2.+"
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '1.0.20'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -17,13 +16,15 @@ tasks.named('wrapper', Wrapper).configure {
 version = mod_version
 group = mod_group_id
 
-
 repositories {
-    maven {
-        url = 'https://maven.terraformersmc.com/'
-          url = 'https://repo.spongepowered.org/repository/maven-public/'
+    maven { url = "https://maven.parchmentmc.org/" }
+    maven { url = "https://maven.shedaniel.me/" }
+    maven { url = "https://maven.minecraftforge.net/" }
 
-    }
+    // JEI
+    maven { url = "https://dvs1.progwml6.com/files/maven/" } // Required for 1.18.2 - 1.20.2
+    maven { url = "https://maven.blamejared.com/" }
+    maven { url = "https://modmaven.dev" }
 }
 
 base {
@@ -118,16 +119,13 @@ configurations {
 }
 
 dependencies {
-
- //   implementation "net.neoforged:neoforge:${"21.1.71"}"
-    implementation "net.neoforged:neoforge:${neoforge_version}"
-    implementation 'com.github.glitchfiend:TerraBlender-forge' + minecraft_version + '-' + "terrablender_version"
-// Example optional mod dependency with JEI
+    // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablenderVersion}"
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
@@ -149,6 +147,7 @@ dependencies {
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
     var replaceProperties = [
+
             minecraft_version      : minecraft_version,
             minecraft_version_range: minecraft_version_range,
             neo_version            : neo_version,

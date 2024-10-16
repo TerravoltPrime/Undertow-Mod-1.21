@@ -3,7 +3,6 @@ package net.terra.undertow.item;
 import net.terra.undertow.UnderTow;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
