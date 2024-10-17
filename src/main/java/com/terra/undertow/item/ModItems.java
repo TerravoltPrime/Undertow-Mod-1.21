@@ -1,7 +1,6 @@
-package net.terra.undertow.item;
+package com.terra.undertow.item;
 
-import net.terra.undertow.UnderTow;
-import net.minecraft.world.item.Item;
+import com.terra.undertow.UnderTow;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 

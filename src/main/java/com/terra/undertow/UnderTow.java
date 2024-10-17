@@ -1,9 +1,11 @@
 
-package net.terra.undertow;
+package com.terra.undertow;
 
-import net.terra.undertow.block.ModBlocks;
-import net.terra.undertow.item.ModItems;
+import com.terra.block.ModBlocks;
+import com.terra.undertow.item.ModItems;
+
 import net.minecraft.world.item.CreativeModeTabs;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -25,9 +27,8 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(UnderTow.MOD_ID)
 public class UnderTow {
     public static final String MOD_ID = "undertow";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
-    public UnderTow(IEventBus modEventBus, ModContainer modContainer) {
+    public UnderTow(@NotNull IEventBus modEventBus, @NotNull ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
         NeoForge.EVENT_BUS.register(this);
@@ -50,7 +51,7 @@ public class UnderTow {
 
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.UMBER);
+            event.accept(ModBlocks.CINNABAR);
         }
     }
 

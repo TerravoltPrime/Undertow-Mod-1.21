@@ -1,6 +1,6 @@
-package net.terra.undertow.block;
+package com.terra.block;
 
-import net.terra.undertow.item.ModItems;
+import com.terra.undertow.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.terra.undertow.UnderTow;
+import com.terra.undertow.UnderTow;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -17,7 +17,7 @@ public class ModBlocks {
             DeferredRegister.createBlocks(UnderTow.MOD_ID);
 
 
-    public static final DeferredBlock<Block> UMBER = registerBlock("umber",
+    public static final DeferredBlock<Block> CINNABAR = registerBlock("cinnabar",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> UMBER_COBBLE = registerBlock("umber_cobble",
