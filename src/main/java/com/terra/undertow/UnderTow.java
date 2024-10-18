@@ -2,13 +2,9 @@
 package com.terra.undertow;
 
 import com.terra.block.ModBlocks;
-import com.terra.undertow.item.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -33,7 +29,6 @@ public class UnderTow {
 
         NeoForge.EVENT_BUS.register(this);
 
-        ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
