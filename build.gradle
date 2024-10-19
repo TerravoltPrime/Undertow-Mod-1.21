@@ -1,7 +1,7 @@
 plugins {
+
     id 'java-library'
     id 'maven-publish'
-
     id 'net.neoforged.moddev' version '1.0.20'
 }
 
@@ -21,9 +21,7 @@ repositories {
     maven { url = "https://maven.parchmentmc.org/" }
     maven { url = "https://maven.shedaniel.me/" }
     maven { url = "https://maven.minecraftforge.net/" }
-    maven {
-        url = 'https://maven.terraformersmc.com/'
-    }
+
     // JEI
     maven { url = "https://dvs1.progwml6.com/files/maven/" } // Required for 1.18.2 - 1.20.2
     maven { url = "https://maven.blamejared.com/" }
@@ -122,6 +120,7 @@ configurations {
 }
 
 dependencies {
+    implementation 'com.github.glitchfiend:TerraBlender-neoforge:' + minecraft_version + '-' + terrablender_version
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
