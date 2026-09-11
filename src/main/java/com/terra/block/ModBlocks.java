@@ -17,7 +17,7 @@ public class ModBlocks {
             DeferredRegister.createBlocks(UnderTow.MOD_ID);
 
 
-    public static final DeferredBlock<Block> UNDER_SOIL = registerBlock("soil",
+    public static final DeferredBlock<Block> UNDER_SOIL = registerBlock("under_soil",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.ROOTED_DIRT)));
     public static final DeferredBlock<Block> LUSH_SOIL = registerBlock("lush_soil",
