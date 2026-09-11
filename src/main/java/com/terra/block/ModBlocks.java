@@ -11,13 +11,13 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import com.terra.undertow.UnderTow;
 import java.util.function.Supplier;
-//update darn it!
+
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(UnderTow.MOD_ID);
 
 
-    public static final DeferredBlock<Block> SOIL = registerBlock("soil",
+    public static final DeferredBlock<Block> UNDER_SOIL = registerBlock("soil",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.ROOTED_DIRT)));
     public static final DeferredBlock<Block> LUSH_SOIL = registerBlock("lush_soil",
