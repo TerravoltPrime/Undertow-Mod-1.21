@@ -14,7 +14,7 @@ public class ModSurfaceRules {
 
     private static final SurfaceRules.RuleSource MOD_DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource MOD_GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource MOD_STONE_BLOCK = makeStateRule(ModBlocks.CINNABAR.get());
+    private static final SurfaceRules.RuleSource MOD_STONE_BLOCK = makeStateRule(ModBlocks.SOIL.get());
     private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
 
 

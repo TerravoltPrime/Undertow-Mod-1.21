@@ -17,12 +17,12 @@ public class ModBlocks {
             DeferredRegister.createBlocks(UnderTow.MOD_ID);
 
 
-    public static final DeferredBlock<Block> CINNABAR = registerBlock("cinnabar",
+    public static final DeferredBlock<Block> SOIL = registerBlock("soil",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> UMBER_COBBLE = registerBlock("umber_cobble",
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.ROOTED_DIRT)));
+    public static final DeferredBlock<Block> LUSH_SOIL = registerBlock("lush_soil",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.GRASS)));
 
 
 

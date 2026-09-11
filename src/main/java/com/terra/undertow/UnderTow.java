@@ -54,7 +54,7 @@ public class UnderTow {
 
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.CINNABAR);
+            event.accept(ModBlocks.LUSH_SOIL);
         }
     }
 
