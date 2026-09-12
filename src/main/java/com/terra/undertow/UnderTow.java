@@ -3,8 +3,6 @@ package com.terra.undertow;
 
 import com.terra.block.ModBlocks;
 
-import com.terra.undertow.worldgen.biome.ModOverworldRegion;
-import com.terra.undertow.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +20,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import terrablender.api.Regions;
-import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(UnderTow.MOD_ID)
@@ -72,16 +69,7 @@ public class UnderTow {
 
         }
 
-        private void commonSetup(final FMLCommonSetupEvent event)
-        {
-            event.enqueueWork(() ->
-            {
-                // Weights are kept intentionally low as we add minimal biomes
-                Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(MOD_ID, "overworld_1"), 5));
 
-                // Register our surface rules
-                SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
-            });
 
         }
-}}
+}

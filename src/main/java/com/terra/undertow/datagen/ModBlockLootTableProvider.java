@@ -16,7 +16,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 //
     @Override
     protected void generate(){
-        dropSelf(ModBlocks.SOIL.get());
+        dropSelf(ModBlocks.UNDER_SOIL.get());
         dropSelf(ModBlocks.LUSH_SOIL.get());
 
     }
