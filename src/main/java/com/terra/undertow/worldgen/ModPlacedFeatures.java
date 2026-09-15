@@ -1,11 +1,17 @@
 package com.terra.undertow.worldgen;
 
+import com.terra.block.ModBlocks;
 import com.terra.undertow.UnderTow;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
@@ -14,10 +20,14 @@ import java.util.List;
 
 
 public class ModPlacedFeatures {
-
+    public static final ResourceKey<PlacedFeature> SOIL_PLACED_KEY = registerKey("soil_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, SOIL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOIL_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                        ModBlocks.UNDER_SOIL.get()));
 
     }
 
