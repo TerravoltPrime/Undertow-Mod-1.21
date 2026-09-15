@@ -21,7 +21,7 @@ public class ModPlacedFeatures {
 
     }
 
-    private static ResourceKey<PlacedFeature> registerKey(String name) {
+    public static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
     }
 

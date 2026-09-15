@@ -18,7 +18,7 @@ public class ModBiomeModifiers {
 
     }
 
-    private static ResourceKey<BiomeModifier> registerKey(String name) {
+    public static ResourceKey<BiomeModifier> registerKey(String name) {
         return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
     }
 }

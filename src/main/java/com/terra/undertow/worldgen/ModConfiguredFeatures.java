@@ -1,7 +1,6 @@
 package com.terra.undertow.worldgen;
 
 
-import com.sun.jna.platform.unix.X11;
 import com.terra.block.ModBlocks;
 import com.terra.undertow.UnderTow;
 import net.minecraft.core.registries.Registries;
@@ -13,7 +12,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.ReplaceSphereConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.ReplaceSphereConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -30,20 +28,23 @@ public class ModConfiguredFeatures {
 
         RuleTest mossReplaceables = new TagMatchTest(BlockTags.MOSS_REPLACEABLE);
 
-        List<OreConfiguration.TargetBlockState> soil = List.of(
+        List<OreConfiguration.TargetBlockState> Soil_KEY = List.of(
                 OreConfiguration.target(mossReplaceables, ModBlocks.UNDER_SOIL.get().defaultBlockState()));
 
 
-      //  register(context, SOIL_KEY, Feature.VEGETATION_PATCH, new ReplaceSphereConfiguration(1, 1, 1)
+        //  register(context, SOIL_KEY, Feature.VEGETATION_PATCH, new ReplaceSphereConfiguration(1, 1, 1)
 
-        }
-
-    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
     }
-
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
+    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
+    }
+
+
+
+
 }
+
