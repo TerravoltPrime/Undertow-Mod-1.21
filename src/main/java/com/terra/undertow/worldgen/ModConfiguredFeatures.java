@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SOIL_PLACEMENT_KEY =
-            registerKey("overworld_custom_ore");
+            registerKey("overworld_custom_ore.json");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         // RuleTest for checking if a target block is stone-based

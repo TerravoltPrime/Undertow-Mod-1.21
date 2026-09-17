@@ -1,0 +1,49 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+
+  "parameters": {
+    "temperature": [-1.0, 1.0],
+    "humidity": [-1.0, 1.0],
+    "continentalness": [-1.5, 1.5],
+    "erosion": [-1.0, 1.0],
+    "weirdness": [-1.0, 1.0],
+    "depth": [0.2, 1.5],
+    "offset": 0.0
+  },
+  "downfall": 0.5,
+  "effects": {
+    "fog_color": 12638463,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.lush_caves"
+    },
+    "sky_color": 8103167,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "features": [
+
+    [
+      "undertow:overworld_custom_ore"
+    ]
+
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {},
+  "temperature": 0.5
+}

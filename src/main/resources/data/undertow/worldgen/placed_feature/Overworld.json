@@ -1,0 +1,12 @@
+{
+  "biome": "undertow:under_grove",
+  "parameters": {
+    "temperature": 0.5,
+    "humidity": 0.5,
+    "continentalness": [-0.5, 0.5],
+    "erosion": [-0.5, 0.5],
+    "weirdness": [-0.5, 0.5],
+    "depth": [0.2, 1.0],
+    "offset": 0.0
+  }
+}

@@ -16,9 +16,9 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 
 import java.util.function.Function;
 
-public class DIrtCaveCarver extends CaveWorldCarver {
+public class DirtCaveCarver extends CaveWorldCarver {
 
-    public DIrtCaveCarver(Codec<CaveCarverConfiguration> codec) {
+    public DirtCaveCarver(Codec<CaveCarverConfiguration> codec) {
         super(codec);
     }
 
