@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "undertow:block/under_soil"
+      },
+      {
+        "model": "undertow:block/under_soil",
+        "y": 90
+      },
+      {
+        "model": "undertow:block/under_soil",
+        "y": 180
+      },
+      {
+        "model": "undertow:block/under_soil",
+        "y": 270
+      }
+    ]
+  }
+}
