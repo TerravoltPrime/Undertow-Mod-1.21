@@ -22,7 +22,6 @@ public class UndertowModBiomes {
     {
         builder.addFeature(step, feature);
     }
-    public static void bootstrap(BootstrapContext<Biome> context){}
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);

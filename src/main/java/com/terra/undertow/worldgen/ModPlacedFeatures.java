@@ -22,7 +22,7 @@ public class ModPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOIL_KEY),
+        register(context, configuredFeatures.getOrThrow(ModConfiguredFeatures.SOIL_PLACEMENT_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
                         ModBlocks.UNDER_SOIL.get()));
 

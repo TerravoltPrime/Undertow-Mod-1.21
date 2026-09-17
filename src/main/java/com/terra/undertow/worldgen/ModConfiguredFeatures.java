@@ -8,44 +8,38 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.ReplaceSphereConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.ReplaceSphereConfiguration;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
 
 import java.util.List;
 
-import static com.terra.block.ModBlocks.UNDER_SOIL;
-import static net.minecraft.tags.BlockTags.MOSS_REPLACEABLE;
-import static org.lwjgl.util.freetype.FT_Memory.create;
-
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SOIL_KEY = registerKey("soil_cave");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOIL_PLACEMENT_KEY =
+            registerKey("overworld_custom_ore");
 
-public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-    RuleTest mossReplaceables = new TagMatchTest(MOSS_REPLACEABLE);
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        // RuleTest for checking if a target block is stone-based
+        TagMatchTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        // RuleTest for checking if a target block is dirt-based
+        TagMatchTest dirtReplaceables = new TagMatchTest(BlockTags.DIRT);
 
+        // List out all blocks this ore is allowed to replace
+        List<OreConfiguration.TargetBlockState> targetList = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.UNDER_SOIL.get().defaultBlockState()),
+                OreConfiguration.target(dirtReplaceables, ModBlocks.UNDER_SOIL.get().defaultBlockState())
+        );
 
-    List<OreConfiguration.TargetBlockState> soil = List.of(
-            OreConfiguration.target(mossReplaceables, ModBlocks.UNDER_SOIL.get().defaultBlockState()));
+        // Register the feature with a vein size (e.g., 9 blocks per vein)
+        context.register(SOIL_PLACEMENT_KEY, new ConfiguredFeature<>(
+                Feature.ORE,
+                new OreConfiguration(targetList, 9)
+        ));
+    }
 
-    register(context, SOIL_KEY, Feature.REPLACE_BLOBS,             new ReplaceSphereConfiguration(Blocks.NETHERRACK.defaultBlockState(), Blocks.BASALT.defaultBlockState(), UniformInt.of(3, 7)));}
-
-public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-    return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
-}
-
-private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
-                                                                                      ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
-    context.register(key, new ConfiguredFeature<>(feature, configuration));
-}
+    public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE,
+                ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, name));
+    }
 }
