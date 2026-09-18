@@ -1,5 +1,5 @@
 {
-  "feature": "undertow:soil",
+  "feature": "undertow:soil_placed",
   "placement": [
     {
       "type": "minecraft:count",

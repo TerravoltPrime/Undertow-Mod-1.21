@@ -1,5 +1,5 @@
-// 1.21.1	2026-09-18T16:27:55.7225162	Registries
+// 1.21.1	2026-09-18T16:45:04.7232895	Registries
 96af58530ccf555e6a68c655c8d250394290374f data/undertow/neoforge/biome_modifier/add_soil.json
-0861bf3835fd33aa02d4d2dba8d3f9fa35d99d62 data/undertow/worldgen/biome/custom_biome.json
+0861bf3835fd33aa02d4d2dba8d3f9fa35d99d62 data/undertow/worldgen/biome/undergove.json
 9c80b273aee3d59cf0c69161c702aa1930c3c9a6 data/undertow/worldgen/configured_feature/overworld_custom_ore.json.json
 4916abc210629b18bc8296cab45b72ffa927550b data/undertow/worldgen/placed_feature/soil_placed.json

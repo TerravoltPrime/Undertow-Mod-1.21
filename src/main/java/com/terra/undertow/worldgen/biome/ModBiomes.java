@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 public class ModBiomes {
     // 1. Biome ResourceKey
     public static final ResourceKey<Biome> UNDERGROVE =
-            ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, "custom_biome"));
+            ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(UnderTow.MOD_ID, "undergove"));
 
     // 2. Custom Configured Carver ResourceKey (e.g., custom cave)
     public static final ResourceKey<ConfiguredWorldCarver<?>> DIRT_CAVE_CARVER
